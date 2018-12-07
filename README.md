@@ -86,6 +86,13 @@ It will change direct `ghc-mod` mod calls to `stack exec --no-stack-exe ghc-mod
 Use this flag if your globally installed ghc-mod doesn't work properly with your
 stack projects.
 
+### `g:neoghc_use_nix_shell`
+Default: 0
+
+Allow using ghc-mod inside nix-shell.
+It will change the direct `ghc-mod` calls to `nix-shell --command ghc-mod --` instead.
+This will only work if a `shell.nix` file is available in the working directory.
+
 ## Troubleshoot
 
 ### Q: neco-ghc does not work

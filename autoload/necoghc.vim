@@ -35,6 +35,8 @@ function! necoghc#boot() abort "{{{
 
   if get(g:, 'necoghc_use_stack', 0)
     let s:ghc_mod_path = ['stack', 'exec', '--no-stack-exe', 'ghc-mod', '--']
+  elseif get(g:, 'neoghc_use_nix_shell', 0)
+    let s:ghc_mod_path = ['nix-shell', '--command', 'ghc-mod', '--']
   endif
 
   let l:opts = get(g:, 'ghcmod_ghc_options', [])
